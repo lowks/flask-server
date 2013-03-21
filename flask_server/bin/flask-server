@@ -1,0 +1,44 @@
+#!/usr/bin/python
+# flask-server
+# author: Ondrej Sika, http://ondrejsika.com, dev@ondrejsika.com
+
+import os
+import sys
+
+from flask_server.normpath import normpath
+
+def help():
+    print """flask-server
+usage:
+flask-server init [path to project]"""
+
+def init(directory):
+    directory = normpath(directory)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+    os.mkdir(normpath(directory, "static"))
+    os.mkdir(normpath(directory, "templates"))
+
+    file(normpath(directory, "wsgi.py"), "w").write("""#!/usr/bin/python
+# flask-server
+# author: Ondrej Sika, http://ondrejsika.com, dev@ondrejsika.com
+from flask_server import FlaskServer, normpath
+application = FlaskServer(__name__, normpath(__file__, ".."))
+if __name__ == "__main__":
+    application.run()""")
+    file(normpath(directory, "templates", "index.html"), "w").write("""<h1>flask-server</h1>
+<p>created by <a href="http://ondrejsika.com">Ondrej Sika</a></p>""")
+
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "init":
+            if len(sys.argv) > 2:
+                directory = sys.argv[2]
+            else:
+                directory = "."
+            init(directory)
+        else:
+            help()
+    else:
+        help()
