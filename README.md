@@ -11,4 +11,4 @@ Source
 ------
 * Documentation: <http://ondrejsika.com/docs/flask-server>
 * Python Package Index: <http://pypi.python.org/pypi/flask-server>
-* GitHub: <https://bitbucket.org/sikaondrej/flask-server>
+* GitHub: <https://github.com/sikaondrej/flask-server>
