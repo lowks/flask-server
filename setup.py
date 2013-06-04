@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "flask-server",
-    version = "1.1",
+    version = "1.2.0",
     url = 'http://ondrejsika.com/docs/flask-server',
     download_url = 'https://github.com/sikaondrej/flask-server',
     license = 'GNU LGPL v.3',
