@@ -9,7 +9,7 @@ setup(
     url = 'http://ondrejsika.com/docs/flask-server',
     download_url = 'https://github.com/sikaondrej/flask-server',
     license = 'GNU LGPL v.3',
-    description = "",
+    description = "Simple HTTP server with Jinja2 templates based on Flask",
     author = 'Ondrej Sika',
     author_email = 'dev@ondrejsika.com',
     packages = find_packages(),
